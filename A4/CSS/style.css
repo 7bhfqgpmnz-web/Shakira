@@ -1,0 +1,582 @@
+ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #111;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+
+/* 统一页面宽度 */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 60px;
+}
+
+/* 顶部导航 */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #111;
+  color: #fff;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #fff;
+  border-bottom-color: #ff5e7b; /* 粉色高亮条 */
+}
+
+/* Hero 区 */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 16px;
+  color: #fff;
+
+  /* 这是最早给你的渐变＋背景图写法 */
+  background-image: linear-gradient(
+  135deg,
+  #8e5c3b,
+  #d4b26a
+);
+
+    url("images/1.jpg");  /* ← 在这里换图片 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+/* 按钮样式 */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: #ff5e7b;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #ff7f96;
+}
+
+.btn-secondary {
+  border: 1px solid #111;
+  color: #111;
+  background-color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Section 标题 */
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.section-intro {
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+
+/* Latest Release 布局 */
+.latest-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.latest-cover img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.latest-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.latest-info p {
+  margin-bottom: 12px;
+}
+
+.latest-info ul {
+  margin-bottom: 16px;
+  padding-left: 18px;
+}
+
+/* Hits 卡片 */
+.hits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.hit-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.hit-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.hit-card p {
+  font-size: 0.95rem;
+}
+
+/* News 卡片 */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.news-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* 底部 */
+.site-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  padding: 16px 8px 20px;
+}
+
+/* 响应式：手机端布局调整 */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .latest-grid,
+  .hits-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* 内页顶部小横幅 */
+/* ======== 内页 Page Hero：金色渐变 + 更高级的标题 ======== */
+.page-hero {
+  padding: 56px 16px;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(
+    135deg,
+    #342017,
+    #8b5a2b,
+    #d4af37,
+    #f4e2b8
+  );
+}
+
+.page-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.page-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+
+/* Albums 页面 */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.album-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.album-cover img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.album-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.album-year {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.album-desc {
+  font-size: 0.95rem;
+}
+
+/* Discography 列表 */
+/* ======== Discography：时间轴风格 ======== */
+.discography-list li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 10px 0 10px 14px;
+}
+
+.discography-list li::before {
+  top: 12px;
+  height: 16px;
+}
+
+/* 年份更突出 */
+.discography-list .year {
+  color: #5a3a1f;
+  background: rgba(212, 175, 55, 0.14);
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+/* 标题略加粗 */
+.discography-list .title {
+  font-weight: 600;
+}
+
+
+/* Contact 布局 */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.contact-info h2 {
+  margin-bottom: 8px;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.contact-line {
+  font-size: 0.9rem;
+}
+
+.social-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+}
+
+.social-list li {
+  margin-bottom: 4px;
+}
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+  .album-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ======== 统一金色主题的小修饰 ======== */
+
+/* 全站主色：金色高亮条 */
+:root {
+  --gold: #d4af37;
+  --gold-soft: #f4e2b8;
+  --dark-bg: #111111;
+}
+
+/* 顶部导航适配金色主题 */
+.site-header {
+  background-color: var(--dark-bg);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #fff;
+  border-bottom-color: var(--gold);  /* 原来的粉色高亮改成金色 */
+}
+
+/* 全局按钮改成金色主题 */
+.btn-primary {
+  background-color: var(--gold);
+  color: #111;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: #f0c75a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+}
+
+.btn-secondary {
+  border: 1px solid #111;
+  color: #111;
+  background-color: #fff;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-bg);
+  color: #fff;
+  border-color: var(--dark-bg);
+}
+
+/* Section 标题下面加一条金色小线，四个页面通用 */
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 6px;
+  background-image: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  border-radius: 999px;
+}
+
+/* ======== 优雅标题字体设置 ======== */
+
+/* Hero 主标题 */
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* 所有页面的 h1 / h2 / h3 标题 */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* Section 标题更有杂志感 */
+.section h2 {
+  letter-spacing: 0.04em;
+}
+
+
+
+
+
+/* Section 顶部留一点呼吸空间 */
+.section {
+  margin-top: 40px;
+}
+
+/* Album / Hits / News 卡片增加轻微 hover 动画 */
+.album-card,
+.hit-card,
+.news-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.album-card:hover,
+.hit-card:hover,
+.news-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.35); /* 金色边框 */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Discography 列表：左侧增加一条细的金色线条感 */
+.discography-list li {
+  position: relative;
+  padding: 6px 0 6px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.discography-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 3px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+}
+
+/* Contact 表单和信息区域更像一组卡片 */
+.contact-form {
+  background-color: #ffffff;
+  border-top: 3px solid var(--gold);
+}
+
+.contact-info h2 {
+  margin-bottom: 8px;
+}
+
+.contact-info h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.social-list li::before {
+  content: "•";
+  margin-right: 6px;
+  color: var(--gold);
+}
+
+/* 底部加一条上边界，让页面更收尾 */
+.site-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #faf7f0;
+}
+
